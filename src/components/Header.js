@@ -1,50 +1,75 @@
-import React from "react";
+import React ,{ useState, useEffect }from "react";
 import styled from "styled-components";
-import {SearchOutlined,LocationOnOutlined,InsertInvitationOutlined,AccessTimeOutlined,KeyboardArrowDown} from '@mui/icons-material';
+import {PersonOutline,SearchOutlined,LocationOnOutlined,InsertInvitationOutlined,AccessTimeOutlined,KeyboardArrowDown} from '@mui/icons-material';
 
 
-function Header() {
+function Nav() {
+
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 992);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 992);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
     <Wrapper>
-    <HeaderContainer style={{width:'100%'}}>
-      <LogoContainer>
-        <Logo1
-          loading="lazy"
-          src="/logo.png"
-        />
-        <Logo2
-          loading="lazy"
-          src="/logo2.png"
-        />
-      </LogoContainer>
-      <UserInfo>
-        <HelpText>Help &nbsp;</HelpText>
-        <Separator />
-        <HelpText> <p> &nbsp; List your service on SqueezeIn.Me &nbsp;</p> </HelpText>
-        <Separator />
-        <SignInText> <p>&nbsp; Log in / Sign up </p>< KeyboardArrowDown /></SignInText>
-       
-      </UserInfo>
-      {/* <EndSpacing /> */}
-    </HeaderContainer>
+    <HeaderContainer style={{ width: '100%' }}>
+                <LogoContainer>
+                    <Logo1
+                        loading="lazy"
+                        src="/logo.png"
+                    />
+                    <Logo2
+                        loading="lazy"
+                        src="/logo2.png"
+                    />
+                </LogoContainer>
+
+                <div>
+                    {isLargeScreen ? (
+                        <UserInfo>
+                            <HelpText>Help &nbsp;</HelpText>
+                            <Separator />
+                            <HelpText> <p> &nbsp; List your service on SqueezeIn.Me &nbsp;</p> </HelpText>
+                            <Separator />
+                            <SignInText> <p>&nbsp; Log in / Sign up </p>< KeyboardArrowDown /></SignInText>
+
+                        </UserInfo>
+                    ) : (
+                        <UserWrapper><PersonOutline /></UserWrapper>
+                    )}
+                </div>
+
+
+
+            </HeaderContainer>
+ 
     <StyledDiv>
-      Your Time, Your Schedule: Effortless Booking with a Click for <br />
-      <span style={{ color: "rgba(252,175,23,1)" }}>Hair Stylist</span>
+      Your Time, Your Schedule: Effortless Booking with a Click for 
+      <span style={{ color: "rgba(252,175,23,1)" }}> Hair Stylist</span>
     </StyledDiv>
+    <BannerSearchWrapper>
     <Form>
       <Container>
       <SearchOutlined />
-        <SearchInput>
-          Search for technicians, painters, etc.
-        </SearchInput>
+        <SearchInput placeholder='Search for technicians, painters etc.' />
+       
       </Container>
       <Divider />
       <Section>
         
         <Label>
           <LocationOnOutlined />
-          <Input>City or Zipcode</Input>
+          <Input placeholder='City or Zipcode'  />
         </Label>
       </Section>
       <Divider />
@@ -52,7 +77,7 @@ function Header() {
         
         <Label>
           <InsertInvitationOutlined />
-          <Input>Date</Input>
+          <Input placeholder='City or Zipcode'  />
         </Label>
       </Section>
       <Divider />
@@ -60,7 +85,7 @@ function Header() {
         
         <Label>
           <AccessTimeOutlined />
-          <Input>Time</Input>
+          <Input placeholder='Time'  />
         </Label>
       </Section>
       <Divider />
@@ -71,6 +96,7 @@ function Header() {
     Experience the convenience of connecting with local experts effortlessly — no calls, no hassle. Just simple, streamlined scheduling for all your needs.
     </Text>
     </Div>
+    </BannerSearchWrapper>
     </Wrapper>
     </>
     
@@ -80,48 +106,104 @@ const Wrapper=styled.div`
 text-align:center;
 background: linear-gradient(to bottom right,rgba(91, 192, 232, 0.20),rgba(252, 175, 23, 0.15));
 padding:80px 121px;
+@media (max-width: 576px) {
+padding:40px 16px;
+}
 `;
 
+const BannerSearchWrapper =styled.div`
+display:flex;
+flex-direction:column;
+@media (max-width: 576px) {
+  flex-direction:column-reverse;
+  }
+`;
 const Text=styled.p`
 margin:0 auto;
 margin-top:20px;
   width: 632px;
   color: #FFF;
  
-  font-family: "Roboto";
-  font-size: 28px;
+  font-family:Roboto;
+  font-size: 32px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 33px;
+
+  text-align: center;
+  
+  font-weight: 500;
+  line-height: 40px;
+
+  @media (max-width: 576px) {
+  
+    width: 272px;
+    
+    text-align: center;
+   
+    font-size: 16px;
+    
+    font-weight: 500;
+    line-height: 20px; /* 125% */
+  }
+
+`;
+
+const UserWrapper=styled.div`
+border: 2.6px solid #253D4E;
+  border-radius: 50%;
+  display: flex;
+  width: 43.71px;
+  height: 43.543px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Div=styled.div`
 background: url("./Frame153(1).png");
 margin-top: 40px;
-width: auto;
-  height: 280px;
+
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
   background-position: center;
   background-size: contain;
   color:black;
-  display:flex;
+ 
+  
+  display: flex;
+  width: 1274.72px;
+  height: 339.753px;
+  padding: 94.815px 98.72px;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  @media (max-width: 576px){
+    margin: 0 auto;
+    margin-top: 0;
+    width: 440px;
+    height: 146px;
+  }
 `;
 
 const HeaderContainer = styled.div`
-  display: flex;
+display: flex;
+align-items: center;
   justify-content: space-between;
   gap: 20px;
-  @media (max-width: 991px) {
-    flex-wrap: wrap;
+  @media (max-width: 576px) {
+  padding:0 24px;
   }
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   gap: 20px;
+  height: 36px;
+  width: 280px;
+  @media (max-width: 576px) {
+    height: 16px;
+    width: 137px;
+    gap: 10px;
+  }
 `;
 
 const Logo1 = styled.img`
@@ -131,6 +213,11 @@ const Logo1 = styled.img`
   width: 64px;
   overflow: hidden;
   max-width: 100%;
+  @media (max-width: 576px) {
+    height: 16px;
+    width: 24px;
+    
+  }
 `;
 
 const Logo2 = styled.img`
@@ -142,6 +229,11 @@ const Logo2 = styled.img`
   align-self: center;
   max-width: 100%;
   margin: auto 0;
+  @media (max-width: 576px) {
+    height: 16px;
+    width: 99px;
+    
+  }
 `;
 
 const UserInfo = styled.div`
@@ -205,7 +297,7 @@ const EndSpacing = styled.div`
   }
 `;
 
-export default Header;
+
 
 
 
@@ -216,17 +308,24 @@ text-align: center;
   max-width: 827px;
   margin: 0 auto;
   padding: 65px 0;
-  color: rgb(37, 61, 78);
+  color: #253D4E
   letter-spacing: 0.7px;
   font-size: 48px;
-  font-family: Quicksand,sans-serif;
+  font-family: Roboto;
   font-weight: 600;
   line-height: 63px;
-}
 
-  @media (max-width: 991px) {
-    font-size: 40px;
-    line-height: 52px;
+
+  @media (max-width: 576px) {
+    width: 387px;
+    padding-bottom:0;
+
+font-family: Roboto;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: 40px; /* 142.857% */
+   
   }
 `;
 
@@ -267,7 +366,7 @@ const Logo = styled.span`
   margin: auto 0;
 `;
 
-const SearchInput = styled.div`
+const SearchInput = styled.input`
   color: var(--Main_clr, #253d4e);
   align-self: stretch;
   flex-grow: 1;
@@ -317,7 +416,7 @@ const Image = styled.img`
   margin: auto 0;
 `;
 
-const Input = styled.div`
+const Input = styled.input`
   color: var(--Main_clr, #253d4e);
   align-self: stretch;
   flex-grow: 1;
@@ -346,3 +445,4 @@ const Button = styled.button`
   }
 `;
 
+export default Nav;

@@ -1,33 +1,10 @@
-import React from "react";
+import React from 'react'
 import styled from "styled-components";
-
-const CustomerSupport = () => {
+function CustomerSupport() {
     return (
-        <>
-            <div style={{padding:'30px 121px 30px 121px'}} >
-                <div style={{ display: 'flex', direction: 'row',gap:'100px' }}>
-                    <div>
-                        <Container>
-                            <Header>
-                            <div style={{color:'rgba(37, 61, 78, 1)', fontSize:'34px',fontWeight:600,fontFamily:'Quicksand'}}>security <span style={{color:'rgba(91, 192, 232, 1)'}}>Matters! </span></div>
-
-                            </Header>
-                            <Description>
-                                Secure communication and all data backed daily.
-                            </Description>
-                            <Features>
-                                Features like HIPAA, SOAP, Password security and SSL will make sure your
-                                data is safe with us. We also offer SSO and are ISO27001 compliant. On
-                                top of that we have a dedicated security officer to make sure your
-                                business remains safe with us.
-                            </Features>
-                        </Container>
-                    </div>
-                    <div>
-                        <img src="customerSupport.png" width='525px'/>
-                    </div>
-                </div>
-                <ContactUs>
+        <div>
+            <div>
+            <ContactUs>
                     {/* <img src="/contactUs.png" alt="contact" /> */}
                     <div style={{color:'white'}}>Lorem ipsum dolor sit amet consectetur.</div>
                     <div>
@@ -55,41 +32,75 @@ const CustomerSupport = () => {
                         </Container2>
                     </div>
                 </ContactUs>
+                <div>
 
-            </div>
-        </>
+                    <div style={{ display: 'flex', direction: 'row' }}>
+                        <div>
+                            <Container>
+                                <Title>
+                                    SqueezeIn for <Span color="rgba(91, 192, 232, 1)">Business</Span>
+                                </Title>
+                                <Description>
+                                    Supercharge your business for free with the world's top booking platform
+                                    for salons and spas. Independently voted no. 1 by industry
+                                    professionals.
+                                </Description>
+                            </Container>
+                        </div>
+                        <div>
+                            <img src="/frame149.png" alt="farme149" />
+                        </div>
+                    </div>
 
-    );
-};
+                </div>
+                </div>
+                </div>
+                )
+}
 
+                const Container = styled.div`
+                display: flex;
+                max-width: 553px;
+                flex-direction: column;
+                padding: 0 20px;
+                `;
 
-const ContactUs = styled.div`
-background: url("./contactUs.png");
-display:flex;
-direction:row;
-justify-content:space-around;
+                const Title = styled.h1`
+                color: #5bc0e8;
+                letter-spacing: 0.62px;
+                width: 100%;
+                font: 500 62px/70px Roboto, sans-serif;
 
-`;
-
-const Container = styled.div`
-  display: flex;
-  max-width: 509px;
-  flex-direction: column;
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
- 
-
-  @media (max-width: 991px) {
-    max-width: 100%;
-    flex-wrap: wrap;
+                @media (max-width: 991px) {
+                    max - width: 100%;
+                font-size: 40px;
+                line-height: 50px;
   }
-`;
+                `;
 
-const Title = styled.div`
+                const Description = styled.p`
+                color: var(--subtext_clr, #6c798d);
+                margin-top: 92px;
+                width: 100%;
+                font: 500 22px/28px Quicksand, sans-serif;
+
+                @media (max-width: 991px) {
+                    max - width: 100%;
+                margin-top: 40px;
+  }
+                `;
+
+                const Span = styled.span`
+                color: ${(props) => props.color};
+                `;
+                const ContactUs = styled.div`
+                background: url("./contactUs.png");
+                display:flex;
+                direction:row;
+                justify-content:space-around;
+                
+                `;
+                const Title1 = styled.div`
   color: #5bc0e8;
   flex-grow: 1;
   flex-basis: auto;
@@ -102,34 +113,7 @@ const Subtitle = styled.div`
   flex-basis: auto;
   font: 500 40px/125% Quicksand, sans-serif;
 `;
-
-const Description = styled.div`
-  color: var(--Main_clr, #253d4e);
-  margin-top: 54px;
-  width: 100%;
-  font: 500 22px/28px Quicksand, sans-serif;
-
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-`;
-
-const Features = styled.div`
-  color: var(--subtext_clr, #6c798d);
-  margin-top: 54px;
-  width: 100%;
-  font: 500 22px/28px Quicksand, sans-serif;
-
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-`;
-
-
-
-
+     
 const Container2 = styled.div`
   justify-content: center;
   display: flex;
@@ -222,4 +206,5 @@ const ContactButton = styled.div`
 
 
 
-export default CustomerSupport;
+
+                export default CustomerSupport
