@@ -1,71 +1,190 @@
+
 import React from 'react'
 import styled from "styled-components";
+import { InputBase,InputAdornment  } from '@mui/material';
+
 function CustomerSupport() {
-    return (
-        <div>
+  return (
+    <div>
+      <MainWrapper>
+        <ContactWrapper>
+          <Heading>Contact <span style={{color:'rgba(37, 61, 78, 1)'}}>Us</span></Heading>
+
+          <ContactUs>
+
+            <Lorem>Lorem ipsum dolor sit amet consectetur.</Lorem>
+            
+              <Container2>
+                <Wrapper>
+                  <ContactInfo>
+                    
+
+                      <InputBase
+                        placeholder='E-mail id'
+                        startAdornment={
+                          <InputAdornment position="start">
+                            <Image
+                              loading="lazy" src="email.png"
+                            />
+                          </InputAdornment>
+                        }
+                      />
+                    
+                  </ContactInfo>
+                  <Divider />
+                  <ContactInfo>
+                    
+
+                      <InputBase placeholder='City or Zipcode'
+                        startAdornment={
+                          <InputAdornment position="start">
+                            <Image
+                              loading="lazy" src='location.png'
+                            />
+                          </InputAdornment>
+                        }
+
+                      />
+
+                  </ContactInfo>
+
+                </Wrapper>
+                <ContactOptions>
+                  <ContactButton>CHAT WITH US</ContactButton>
+                  <ContactButton>Call us</ContactButton>
+                </ContactOptions>
+              </Container2>
+            
+          </ContactUs>
+        </ContactWrapper>
+        <WrapperContainer>
+          <Heading1>SqueezeIn <span style={{ color: 'rgba(91, 192, 232, 1)' }}> For Business </span></Heading1>
+
+          <BusinessWrapper>
             <div>
-            <ContactUs>
-                    {/* <img src="/contactUs.png" alt="contact" /> */}
-                    <div style={{color:'white'}}>Lorem ipsum dolor sit amet consectetur.</div>
-                    <div>
-                        <Container2>
-                            <Wrapper>
-                                <ContactInfo>
-                                    <Image
-                                        loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/1652a69a5061f1e0228426afd148ae59ecfbb84cd9c9a80b32770060d62042ad?apiKey=252fdac3ac61463cb0d2a2667f2e3068&"
-                                    />
-                                    <Label>E-mail id</Label>
-                                </ContactInfo>
-                                <ContactInfo>
-                                    <Image
-                                        loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/8050e400dda7de5d7f84d8693f8a600b900dbc4a60a28a974e58b7de25f991fd?apiKey=252fdac3ac61463cb0d2a2667f2e3068&"
-                                    />
-                                    <Label>City or Zipcode</Label>
-                                </ContactInfo>
-                            </Wrapper>
-                            <ContactOptions>
-                                <ContactButton>CHAT WITH US</ContactButton>
-                                <ContactButton>Call us</ContactButton>
-                            </ContactOptions>
-                        </Container2>
-                    </div>
-                </ContactUs>
-                <div>
 
-                    <div style={{ display: 'flex', direction: 'row' }}>
-                        <div>
-                            <Container>
-                                <Title>
-                                    SqueezeIn for <Span color="rgba(91, 192, 232, 1)">Business</Span>
-                                </Title>
-                                <Description>
-                                    Supercharge your business for free with the world's top booking platform
-                                    for salons and spas. Independently voted no. 1 by industry
-                                    professionals.
-                                </Description>
-                            </Container>
-                        </div>
-                        <div>
-                            <img src="/frame149.png" alt="farme149" />
-                        </div>
-                    </div>
+              {/* <Container> */}
 
-                </div>
-                </div>
-                </div>
-                )
+              <Description>
+                Supercharge your business for free with the world's top booking platform
+                for salons and spas. Independently voted no. 1 by industry
+                professionals.
+              </Description>
+              {/* </Container> */}
+            </div>
+            <ImageWrapper>
+              <Image1 src="/frame149.png" alt="farme149" />
+            </ImageWrapper>
+          </BusinessWrapper>
+
+        </WrapperContainer>
+      </MainWrapper>
+    </div>
+  )
 }
+const ContactWrapper = styled.div`
+width:100%;
+@media (max-width:576px){
+  
+}
+`;
+const Divider = styled.div`
+  background-color: var(--grey, #d3d3d3);
+  display: flex;
+  width: 2px;
+  height: 50px;
+  flex-direction: column;
+  @media (max-width: 576px) {
+    display:none;
+  }
+`;
 
-                const Container = styled.div`
-                display: flex;
-                max-width: 553px;
-                flex-direction: column;
-                padding: 0 20px;
+const Lorem = styled.div`
+color:white;
+font-family: Quicksand;
+font-size: 54px;
+font-weight: 700;
+line-height: 70px; /* 129.63% */
+margin:auto 0;
+@media (max-width:576px){
+ font-size: 28px;
+line-height: 50px; /* 178.571% */
+margin:0px;
+}
+`;
+const ImageWrapper = styled.div`
+
+@media (max-width:576px){
+  text-align:center;
+}
+`;
+const Heading1 = styled.div`
+color: var(--Main_clr, #253D4E);
+width:521px;
+/* heading1 */
+font-family: Roboto;
+font-size: 62px;
+font-style: normal;
+font-weight: 500;
+line-height: 70px; /* 112.903% */
+letter-spacing: 0.62px;
+@media (max-width:576px){
+margin-bottom:20px;
+font-size: 28px;
+text-align:center;
+line-height: 40px; /* 142.857% */
+letter-spacing: 0.28px;
+width:auto;
+}
+`;
+const Image1 = styled.img`
+width:770px;
+height:623px;
+margin-top:-140px;
+@media (max-width:576px){
+  width:192px;
+  height:155px;
+  margin-top: 0;
+}
+`;
+const BusinessWrapper = styled.div`
+display: flex;
+direction:row;
+@media (max-width:576px){
+  flex-direction:column-reverse;
+}
+`;
+
+// const Container = styled.div`
+//                 display: flex;
+//                 max-width: 553px;
+//                 flex-direction: column;
+//                 padding: 0 20px;
+// `;
+
+const WrapperContainer = styled.div`
+                padding:30px 121px 30px 121px;
+                @media (max-width:576px){
+                  padding:30px 16px;
+                }
                 `;
 
-                const Title = styled.h1`
+const Heading = styled.div`
+color:rgba(91, 192, 232, 1); 
+  font-size:30px;
+  margin-bottom:30px;
+  font-weight:500;
+  padding-left:121px;
+  @media (max-width:576px){
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    padding-left:0px;
+  }
+
+`;
+
+const Title = styled.h1`
                 color: #5bc0e8;
                 letter-spacing: 0.62px;
                 width: 100%;
@@ -78,29 +197,45 @@ function CustomerSupport() {
   }
                 `;
 
-                const Description = styled.p`
+const Description = styled.p`
                 color: var(--subtext_clr, #6c798d);
                 margin-top: 92px;
-                width: 100%;
-                font: 500 22px/28px Quicksand, sans-serif;
+                width: 70%;
+  font: 500 20px/26px Quicksand,sans-serif;
 
-                @media (max-width: 991px) {
-                    max - width: 100%;
-                margin-top: 40px;
+                @media (max-width: 576px) {
+                    width: 100%;
+                margin-top: 20px;
+                font: 500 16px Quicksand, sans-serif;
+                line-height:20px;
+                text-align:justify;
   }
                 `;
 
-                const Span = styled.span`
+const Span = styled.span`
                 color: ${(props) => props.color};
                 `;
-                const ContactUs = styled.div`
+const ContactUs = styled.div`
                 background: url("./contactUs.png");
+                background-size:cover;
+                background-position:center;
+                background-repeat:no-repeat;
                 display:flex;
                 direction:row;
                 justify-content:space-around;
-                
-                `;
-                const Title1 = styled.div`
+                height:343px;
+                border-radius: 50px;
+                padding: 0 70px;
+
+               @media (max-width:576px){
+                width: 100%;
+                height: 318px;
+                border-radius:28px;
+                flex-direction:column;
+                padding:0px 16px;
+               }
+ `;
+const Title1 = styled.div`
   color: #5bc0e8;
   flex-grow: 1;
   flex-basis: auto;
@@ -113,32 +248,44 @@ const Subtitle = styled.div`
   flex-basis: auto;
   font: 500 40px/125% Quicksand, sans-serif;
 `;
-     
+
 const Container2 = styled.div`
   justify-content: center;
   display: flex;
   max-width: 755px;
   flex-direction: column;
+  align-self:center;
 `;
 
 const Wrapper = styled.div`
-  border-radius: 100px;
-  border: 1px solid var(--grey, #d3d3d3);
-  background-color: var(--white, #fff);
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 15px 77px;
+ display:flex;
+ flex-direction:row;
 
-  @media (max-width: 991px) {
-    max-width: 100%;
-    flex-wrap: wrap;
-    padding: 0 20px;
+width: 700px;
+height: 70px;
+padding: 15px 74px;
+align-items: center;
+gap: 100px;
+ border-radius: 100px;
+ border: 1px solid #D3D3D3;
+ background: #FFF;
+
+
+
+  @media (max-width: 576px) {
+    width: 398px;
+height: 56px;
+
   }
 `;
+const MainWrapper = styled.div`
+display:flex;
+flex-direction:column;
 
+ @media (max-width: px) {
+   flex-direction:column-reverse;
+ }
+`;
 const ContactInfo = styled.div`
   display: flex;
   gap: 16px;
@@ -146,15 +293,11 @@ const ContactInfo = styled.div`
 `;
 
 const Image = styled.img`
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
-  width: 24px;
-  overflow: hidden;
-  max-width: 100%;
+ 
+  
 `;
 
-const Label = styled.div`
+const Input = styled.input`
   color: var(--Main_clr, #253d4e);
   font: 500 20px/120% Quicksand, sans-serif;
 `;
@@ -163,48 +306,49 @@ const ContactOptions = styled.div`
   align-self: center;
   display: flex;
   margin-top: 43px;
-  width: 100%;
-  max-width: 564px;
+ 
+  
   justify-content: space-between;
   gap: 20px;
 
   @media (max-width: 991px) {
-    max-width: 100%;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    width: 100%;
+    
+    
+    margin-top: 20px;
   }
 `;
 
-const ContactButton = styled.div`
+const ContactButton = styled.button`
   color: #253d4e;
   text-align: center;
   white-space: nowrap;
   justify-content: center;
   border-radius: 50px;
   flex-grow: 1;
-  font: 600 24px/117% Roboto, sans-serif;
+  cursor:pointer;
+  font: 600 20px/110% Roboto, sans-serif;
   
   &:nth-child(1) {
     background-color: #fff852;
-    padding: 21px 39px;
+    padding: 15px 19px;
   }
   
   &:nth-child(2) {
-    background-color: #5bc0e8;
-    padding: 27px 60px;
-    color: #fff;
+    background-color: #FFB7F4;
+    padding: 0 60px;
+    color: #253D4E;
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
   }
 
-  @media (max-width: 991px) {
-    white-space: initial;
-    padding: 0 20px;
+  @media (max-width: 576px) {
+   
   }
 }`;
 
 
 
 
-                export default CustomerSupport
+export default CustomerSupport

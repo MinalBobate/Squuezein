@@ -1,22 +1,67 @@
-import * as React from "react";
+import React, {useState,useEffect} from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+
+
 
 function Reviews(props) {
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.matchMedia('(max-width: 576px)').matches);
+    };
+
+    handleResize(); // Set initial screen size
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const slidesPerView = isSmallScreen ? 1 : 2; // Adjust the number of visible slides based on screen size
+
+  const swiperParams = {
+    slidesPerView: slidesPerView,
+    spaceBetween: 0, // You can adjust the space between slides as needed
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000, 
+      disableOnInteraction: false, 
+    },
+  };
+
   return (
     <>
-    <div style={{padding:'30px 121px 30px 121px'}}>
-    <div style={{color:'rgba(37, 61, 78, 1)', fontSize:'30px',fontWeight:600,marginBottom:'30px',fontFamily:'Quicksand'}}>Our Customers <span style={{color:'rgba(91, 192, 232, 1)'}}>Say </span></div>
-      <div style={{display:'flex',justifyContent:'center'}}>
-    <CardContainer>
+
+    <WrapperContainer >
+    <Heading>Our Customers <span style={{color:'rgba(91, 192, 232, 1)'}}>Say </span></Heading>
+
+
+    <Swiper {...swiperParams} style={{display:'flex', direction:'row', justifyContent:'center',overflow:'visible'}}>
+      <SwiperSlide>
+      <CardContainer className="customClass">
       <ProfileWrapper>
-        <ProfileImage loading="lazy" srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&"/>
+        <ProfileImage loading="lazy" src="swiper5.png"/>
         <ProfileName>Nadine Bertalli</ProfileName>
         <ProfileInfo>kinesiology & wellness</ProfileInfo>
         <ProfileRole>Owner</ProfileRole>
       
       <TestimonialWrapper>
         <Testimonial>
-          <p>
+          <TestimonialText>
             Time-Saving Convenience <br /> <br />{" "}
             <span style={{ fontWeight: 500 }}>
               &quot;SqueezeIn has been a game-changer for my schedule! I managed
@@ -24,22 +69,24 @@ function Reviews(props) {
               which was unthinkable before. I'm never wasting time calling
               around again!&quot;
             </span>
-          </p>
+            </TestimonialText>
           <TestimonialAuthor>Nadine Bertalli</TestimonialAuthor>
         </Testimonial>
       </TestimonialWrapper>
       </ProfileWrapper>
     </CardContainer>
-    <CardContainer className="customClass">
+      </SwiperSlide>
+      <SwiperSlide>
+      <CardContainer className="customClass">
       <ProfileWrapper>
-        <ProfileImage loading="lazy" srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/18d4413d9d6314b494666146cf38c0a0bcebf3a3c8042b016cabfa2b9f4ffe55?apiKey=252fdac3ac61463cb0d2a2667f2e3068&"/>
+        <ProfileImage loading="lazy" src="swiper2.png"/>
         <ProfileName>Nadine Bertalli</ProfileName>
         <ProfileInfo>kinesiology & wellness</ProfileInfo>
         <ProfileRole>Owner</ProfileRole>
       
       <TestimonialWrapper>
         <Testimonial>
-          <p>
+          <TestimonialText>
             Time-Saving Convenience <br /> <br />{" "}
             <span style={{ fontWeight: 500 }}>
               &quot;SqueezeIn has been a game-changer for my schedule! I managed
@@ -47,19 +94,100 @@ function Reviews(props) {
               which was unthinkable before. I'm never wasting time calling
               around again!&quot;
             </span>
-          </p>
+          </TestimonialText>
           <TestimonialAuthor>Nadine Bertalli</TestimonialAuthor>
         </Testimonial>
       </TestimonialWrapper>
       </ProfileWrapper>
     </CardContainer>
-    </div>
+      </SwiperSlide>
+      <SwiperSlide>
+      <CardContainer className="customClass">
+      <ProfileWrapper>
+        <ProfileImage loading="lazy" src="swiper3.png"/>
+        <ProfileName>Nadine Bertalli</ProfileName>
+        <ProfileInfo>kinesiology & wellness</ProfileInfo>
+        <ProfileRole>Owner</ProfileRole>
+      
+      <TestimonialWrapper>
+        <Testimonial>
+          <TestimonialText>
+            Time-Saving Convenience <br /> <br />{" "}
+            <span style={{ fontWeight: 500 }}>
+              &quot;SqueezeIn has been a game-changer for my schedule! I managed
+              to book a last-minute hair appointment during my lunch break,
+              which was unthinkable before. I'm never wasting time calling
+              around again!&quot;
+            </span>
+          </TestimonialText>
+          <TestimonialAuthor>Nadine Bertalli</TestimonialAuthor>
+        </Testimonial>
+      </TestimonialWrapper>
+      </ProfileWrapper>
+    </CardContainer>
+      </SwiperSlide>
+      <SwiperSlide>
+      <CardContainer className="customClass">
+      <ProfileWrapper>
+        <ProfileImage loading="lazy" src="swiper4.png"/>
+        <ProfileName>Nadine Bertalli</ProfileName>
+        <ProfileInfo>kinesiology & wellness</ProfileInfo>
+        <ProfileRole>Owner</ProfileRole>
+      
+      <TestimonialWrapper>
+        <Testimonial>
+          <TestimonialText>
+            Time-Saving Convenience <br /> <br />{" "}
+            <span style={{ fontWeight: 500 }}>
+              &quot;SqueezeIn has been a game-changer for my schedule! I managed
+              to book a last-minute hair appointment during my lunch break,
+              which was unthinkable before. I'm never wasting time calling
+              around again!&quot;
+            </span>
+          </TestimonialText>
+          <TestimonialAuthor>Nadine Bertalli</TestimonialAuthor>
+        </Testimonial>
+      </TestimonialWrapper>
+      </ProfileWrapper>
+    </CardContainer>
+      </SwiperSlide>
+      
+    </Swiper>
+  ...
+
+      
+    
+   
+    
     <div style={{textAlign:'center'}}><Button>See More Reviews</Button></div>
-    </div>
+    </WrapperContainer>
     </>
     
   );
 }
+
+
+
+const WrapperContainer=styled.div`
+padding:30px 121px 30px 121px;
+@media (max-width:576px){
+  padding:30px 16px;
+}
+`;
+
+const Heading=styled.div`
+color:rgba(91, 192, 232, 1); 
+  font-size:30px;
+  margin-bottom:30px;
+  font-weight:500;
+  @media (max-width:576px){
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+`;
+
 const Button=styled.button`
 background: rgb(91, 192, 232);
   border: rgb(91, 192, 232) solid 1px;
@@ -67,19 +195,26 @@ background: rgb(91, 192, 232);
   padding: 16px 0;
   width: 247px;
   margin: 30px auto;
+  cursor:pointer;
   color: white;
   font-size: 18px;
-
+@media (max-width:576px){
+  margin-top:60px;
+}
 `;
 
 const CardContainer = styled.div`
   display: flex;
-  max-width: 490px;
+  width: 490px;
+  height:514px;
   padding: 40px 0;
+  margin: 0 auto;
   flex-direction: column;
-  &.customClass{
-    margin-left:40px;
+  @media (max-width: 576px) {
+    width: 100%;
+  height:455px;
   }
+ 
 `;
 
 const ProfileWrapper = styled.span`
@@ -92,20 +227,20 @@ const ProfileWrapper = styled.span`
   flex-direction: column;
   padding: 0 20px 28px;
 
-  @media (max-width: 991px) {
-    max-width: 100%;
+  @media (max-width: 576px) {
+ 
   }
 `;
 
 const ProfileImage = styled.img`
-  aspect-ratio: 1.03;
+  
   object-fit: contain;
   object-position: center;
-  width: 155px;
+  width: 120px;
   overflow: hidden;
   align-self: center;
   z-index: 1;
-  margin-top: -40px;
+  margin-top: -50px;
   max-width: 100%;
 `;
 
@@ -113,11 +248,11 @@ const ProfileName = styled.div`
   color: var(--Main_clr, #253d4e);
   text-align: center;
   align-self: center;
-  margin-top: 33px;
+  margin-top: 21px;
   white-space: nowrap;
-  font: 400 16px/137.5% Mulish, sans-serif;
+  font: 500 16px/137.5% Quicksand,sans-serif;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     white-space: initial;
   }
 `;
@@ -126,12 +261,12 @@ const ProfileInfo = styled.div`
   color: var(--Main_clr, #253d4e);
   text-align: center;
   align-self: center;
-  margin-top: 14px;
+  margin-top: 4px;
   white-space: nowrap;
   font: 500 16px/137.5% Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
-    white-space: initial;
+  @media (max-width: 576px) {
+    
   }
 `;
 
@@ -139,19 +274,19 @@ const ProfileRole = styled.div`
   color: var(--Main_clr, #253d4e);
   text-align: center;
   align-self: center;
-  margin-top: 11px;
+  margin-top: 4px;
   white-space: nowrap;
   font: 500 16px/137.5% Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
-    white-space: initial;
+  @media (max-width: 576px) {
+    
   }
 `;
 
 const TestimonialWrapper = styled.span`
   align-self: stretch;
   display: flex;
-  margin-top: 27px;
+  margin-top: 21px;
   width: 100%;
   flex-direction: column;
   padding: 0 31px 0 19px;
@@ -164,23 +299,34 @@ const TestimonialWrapper = styled.span`
 
 const Testimonial = styled.div`
   color: var(--subtext_clr, #6c798d);
-  font: 600 18px/26px Quicksand, sans-serif;
+  font: 600 16px Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
   }
 `;
 
 const TestimonialAuthor = styled.div`
   color: var(--Main_clr, #253d4e);
-  text-align: center;
+  text-align: right;
   margin-top: 59px;
-  font: 500 28px/114% Quicksand, sans-serif;
+  margin-bottom:20px;
+  font: 500 18px/114% Quicksand, sans-serif;
 
   @media (max-width: 991px) {
     max-width: 100%;
     margin-top: 40px;
   }
 `;
+
+const TestimonialText = styled.div`
+  
+  font: 500 16px/114% Quicksand, sans-serif;
+
+  @media (max-width: 991px) {
+   font-size:16px;
+  }
+`;
+
 
 export default Reviews;

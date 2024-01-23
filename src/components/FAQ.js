@@ -1,13 +1,36 @@
 
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import styled from "styled-components";
 
 function FAQ() {
-    return (
-        <div style={{ padding: '30px 121px 0 121px' }}>
-            <div >
 
-                <Heading>Frequently asked questions(FAQs)</Heading>
+
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 567);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 576);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+    return (
+        <WrapperContainer>
+            <div >
+            <div>
+                    {isLargeScreen ? (
+                        <Heading>Frequently asked questions(FAQs)</Heading>
+                    ) : (
+                      <Heading>FAQs</Heading>
+                    )}
+                </div>
+
+                
                 <QueAns>
                     <div>
                     <Container>
@@ -74,7 +97,7 @@ function FAQ() {
                     <Button>SEE MORE</Button>
                 </div>
             </div>
-        </div>
+        </WrapperContainer>
     )
 }
 
@@ -82,6 +105,21 @@ const Divider=styled.div`
 border: 2px solid rgba(211, 211, 211, 0.2);
   width: 1000px;
   margin: 0 auto;
+  @media (max-width:576px){
+    width:95%;
+    margin-left:10px;
+  }
+  
+`;
+const WrapperContainer=styled.div`
+padding:30px 121px 30px 121px;
+@media (max-width:576px){
+  padding:30px 16px;
+  border-radius: 8px;
+border: 1px solid #D3D3D3;
+
+background: #FFF;
+}
 `;
 
 
@@ -94,6 +132,7 @@ border-radius: 50px;
 padding: 16px 0;
 width: 175px;
 margin: 30px auto;
+cursor:pointer;
 color: white;
 font-size: 18px;
 font-weight:600;
@@ -106,6 +145,9 @@ font-size: 40px;
 font-style: normal;
 font-weight: 600;
 line-height: 50px;
+@media(max-width:576px){
+  text-align:center;
+}
 `;
 
 const QueAns = styled.div`
@@ -118,6 +160,10 @@ align-items: flex-start;
 gap: 30px;
 border-radius: 24px;
 background: #FFF;
+
+@media (max-width:576px){
+ padding:10px;
+}
 `;
 
 
@@ -139,9 +185,9 @@ const Header = styled.header`
   gap: 10px;
   
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
-    flex-wrap: wrap;
+   
   }
 `;
 
@@ -153,8 +199,8 @@ const PlusIcon = styled.div`
   margin: auto 0;
   font: 500 20px/110% Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
-    white-space: initial;
+  @media (max-width: 576px) {
+   
   }
 `;
 
@@ -164,8 +210,10 @@ const Title = styled.div`
   flex-grow: 1;
   font: 500 20px Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
-    max-width: 100%;
+  @media (max-width: 576px) {
+    width: 100%;
+    font-size:14px;
+    line-height:20px;
   }
 `;
 
@@ -175,8 +223,11 @@ const Description = styled.div`
   width: 100%;
   font: 500 18px Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
-    max-width: 100%;
+  @media (max-width: 576px) {
+    
+    font-size:14px;
+    line-height:20px;
+    padding-left:10px;
   }
 `;
 

@@ -5,13 +5,14 @@ import styled from "styled-components";
 function TopFeatures(props) {
   return (
     <>
-    <div style={{padding:'30px 121px 30px 121px'}}>
-    <div style={{color:'rgba(37, 61, 78, 1)', fontSize:'30px',marginBottom:'30px',fontFamily:'Quicksand'}}>Top <span style={{color:'rgba(91, 192, 232, 1)'}}>Freatures </span></div>
+    <WrapperContainer >
    
+    <Heading >Top<span style={{color:'rgba(37, 61, 78, 1)'}}> Features</span></Heading>
 
-      <div style={{background:'rgba(91, 192, 232, 0.03)',padding: '40px 90px'}}>
+
+      <Wrapper >
       
-      <div style={{display:'grid',gridTemplateRows:'auto auto',gridTemplateColumns:'auto auto auto',gridGap: '40px',}}>
+      <MainContainer >
       <Container>
       <ImageContainer>
         <LazyImage
@@ -97,26 +98,74 @@ function TopFeatures(props) {
         </Description>
       </DescriptionContainer>
     </Container>
-      </div>
-      <div style={{
-        textAlign: 'center',
-        paddingTop: '60px'
-      }}>
+    </MainContainer>
+      <BtnContainer >
 <Button>See More Freatures</Button>
 
-      </div>
-      </div>
+      </ BtnContainer>
+      </Wrapper>
   
-    </div>
+    </WrapperContainer>
     </>
    
   );
 }
+
+const BtnContainer=styled.div`
+text-align: center;
+padding-top: 60px;
+@media (max-width:576px){
+  padding-top: 0;
+}
+`;
+
+
+
+
+const WrapperContainer=styled.div`
+padding:30px 121px 30px 121px;
+@media (max-width:576px){
+  padding:30px 16px;
+}
+`;
+
+const Heading=styled.div`
+color:rgba(91, 192, 232, 1); 
+  font-size:30px;
+  margin-bottom:30px;
+  font-weight:500;
+  @media (max-width:576px){
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+`;
+ 
+
+const Wrapper=styled.div`
+background:rgba(91, 192, 232, 0.03);
+padding: 40px 90px;
+@media (max-width:576px){
+  padding:0;
+}
+`;
+
+const MainContainer=styled.div`
+display:grid;
+grid-template-rows:auto auto;
+grid-template-columns:auto auto auto;
+grid-gap: 40px;
+@media (max-width:576px){
+ display:block;
+}
+`;
 const Button=styled.button`
 background: rgb(91, 192, 232);
   border: rgb(91, 192, 232) solid 1px;
   border-radius: 50px;
   padding: 16px 0;
+  cursor:pointer;
   width: 247px;
   margin: 30px auto;
   color: white;
@@ -130,6 +179,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @media (max-width:576px){
+padding:20px 10px 10px 10px;
+
+max-width: 100%;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -167,6 +221,11 @@ const DescriptionContainer = styled.div`
   justify-content: center;
   padding: 28px 1px;
   box-shadow: 0 3px rgba(150, 162, 166, 0.19);
+  @media (max-width:576px){
+    width: 100%;
+    padding:20px 1px;
+    height:auto;
+  }
 `;
 
 const Title = styled.div`

@@ -4,14 +4,14 @@ import styled from "styled-components";
 const Security = () => {
     return (
         <>
-            <div style={{padding:'30px 121px 30px 121px'}} >
-                <div style={{ display: 'flex', direction: 'row',gap:'100px' }}>
-                    <div>
-                        <Container>
-                            <Header>
-                            <div style={{color:'rgba(37, 61, 78, 1)', fontSize:'34px',fontWeight:600,fontFamily:'Quicksand'}}>security <span style={{color:'rgba(91, 192, 232, 1)'}}>Matters! </span></div>
+            <WrapperContainer>
+            <Heading >Security<span style={{color:'rgba(37, 61, 78, 1)'}}> Matters!</span></Heading>
 
-                            </Header>
+                <Wrapper>
+                    <div>
+
+                        <Container>
+                            
                             <Description>
                                 Secure communication and all data backed daily.
                             </Description>
@@ -23,20 +23,64 @@ const Security = () => {
                             </Features>
                         </Container>
                     </div>
-                    <div>
-                        <img src="customerSupport.png" width='525px'/>
-                    </div>
-                </div>
+                    <ImageWrapper>
+                        <Image src="customerSupport.png" />
+                    </ImageWrapper>
+                </Wrapper>
                
 
-            </div>
+                </WrapperContainer>
         </>
 
     );
 };
 
+const ImageWrapper=styled.div`
+
+@media (max-width:576px){
+text-align:center;
+}
+`;
+
+const Image=styled.img`
+width=525px;
+height:395px;
+@media (max-width:576px){
+ width:192px;
+ height:144px;
+}
+`;
+
+const Heading=styled.div`
+color:rgba(91, 192, 232, 1); 
+  font-size:30px;
+  margin-bottom:30px;
+  font-weight:500;
+  @media (max-width:576px){
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+`;
+const WrapperContainer=styled.div`
+padding:30px 121px 30px 121px;
+@media (max-width:576px){
+  padding:30px 16px;
+}
+`;
 
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+
+  @media (max-width: 576px) {
+    flex-direction: column-reverse;
+    gap:0px
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -50,7 +94,7 @@ const Header = styled.div`
   gap: 8px;
  
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
     flex-wrap: wrap;
   }
@@ -64,9 +108,10 @@ const Description = styled.div`
   width: 100%;
   font: 500 22px/28px Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
     margin-top: 40px;
+    font-size:18px;
   }
 `;
 
@@ -76,9 +121,10 @@ const Features = styled.div`
   width: 100%;
   font: 500 22px/28px Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
-    max-width: 100%;
+  @media (max-width: 576px) {
+    width: 100%;
     margin-top: 40px;
+    font:500 16px Quicksand,sans-serif;
   }
 `;
 

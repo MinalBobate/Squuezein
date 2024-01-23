@@ -5,12 +5,13 @@ import styled from "styled-components";
 const HowWeWork = (props) => {
   return (
     <>
-<div style={{padding:'30px 121px 30px 121px'}}>
-<div style={{color:'rgba(37, 61, 78, 1)', fontSize:'30px',marginBottom:'30px'}}>How We <span style={{color:'rgba(91, 192, 232, 1)'}}>Work </span></div>
+<WrapperContainer >
+<Heading >How We<span style={{color:'rgba(37, 61, 78, 1)'}}> Work</span></Heading>
+
 
     <Container>
       <LeftColumn>
-        <img
+        <Image
           loading="lazy"
           src="11.png" width='260px'
         />
@@ -30,7 +31,7 @@ const HowWeWork = (props) => {
     <Divider />
     <Container>
       <LeftColumn>
-        <img
+        <Image
           loading="lazy"
           src="12.png" width='260px'
         />
@@ -50,7 +51,7 @@ const HowWeWork = (props) => {
     <Divider />
     <Container>
       <LeftColumn>
-        <img
+        <Image
           loading="lazy"
           src="13.png" width='260px'
         />
@@ -69,7 +70,7 @@ const HowWeWork = (props) => {
     <Divider />
     <Container>
       <LeftColumn>
-        <img
+        <Image
           loading="lazy"
           src="14.png" width='260px'
         />
@@ -88,7 +89,7 @@ const HowWeWork = (props) => {
     <Divider />
     <Container>
       <LeftColumn>
-        <img
+        <Image
           loading="lazy"
           src="15.png" width='260px'
         />
@@ -105,24 +106,60 @@ const HowWeWork = (props) => {
       </RightColumn>
     </Container>
 
-    </div>
+   </WrapperContainer >
     </>
   );
 };
+
+const WrapperContainer=styled.div`
+padding:30px 121px 30px 121px;
+@media (max-width:576px){
+  padding:30px 16px;
+}
+`;
+
+const Heading=styled.div`
+color:rgba(91, 192, 232, 1); 
+  font-size:30px;
+  margin-bottom:30px;
+  font-weight:500;
+  @media (max-width:576px){
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+`;
 
 const Container = styled.div`
 display:flex;
 direction:row;
 padding:50px 110px;
-  @media (max-width: 991px) {
-    padding-right: 20px;
+  @media (max-width: 576px) {
+    padding:0;
+    flex-direction:column;
+
   }
 `;
 
+const Image=styled.img`
+width:260px;
+@media (max-width: 576px) {
+ width:182px;
+ height:161px;
+ align-self:center;
+}
+`;
+
+
 const Divider=styled.div`
 border: 2px solid rgba(211, 211, 211, 0.2);
-  width: 500px;
+  width: 50%;
   margin: 0 auto;
+  @media (max-width: 576px) {
+   margin: 30px auto; 
+   width: 100%;
+  }
 `;
 
 const LeftColumn = styled.div`
@@ -146,6 +183,8 @@ const RightColumn = styled.div`
 
   @media (max-width: 991px) {
     width: 100%;
+     margin-left: 0
+     ;
   }
 `;
 
@@ -153,9 +192,9 @@ const ContentWrapper = styled.span`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 `;
 
@@ -164,15 +203,16 @@ const TitleWrapper = styled.span`
   display: flex;
   gap: 20px;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
-    flex-wrap: wrap;
+    
+    flex-direction:row;
   }
 `;
 
 const TitleNumber = styled.span`
   color: var(--Main_clr, #253d4e);
-  white-space: nowrap;
+  
   stroke-width: 2px;
   border: 2px solid black;
   border-radius: 50%;
@@ -180,9 +220,9 @@ const TitleNumber = styled.span`
   padding: 13px 24px;
   font: 600 24px/125% Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     white-space: initial;
-    padding: 0 20px;
+   padding: 1px 12px;
   }
 `;
 
@@ -192,21 +232,24 @@ const TitleText = styled.div`
   flex-grow: 1;
   flex-basis: auto;
   margin: auto 0;
-  font: 500 28px/114% Quicksand, sans-serif;
+  font: 600 28px/114% Quicksand, sans-serif;
 
-  @media (max-width: 991px) {
+  @media (max-width: 576px) {
     max-width: 100%;
+    font-size:18px;
   }
 `;
 
 const Description = styled.div`
   color: var(--subtext_clr, #6c798d);
   margin-top: 54px;
-  font: 500 20px/28px Quicksand, sans-serif;
+  font: 500 20px Quicksand, sans-serif;
 width:500px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size:16px;
   }
 `;
 

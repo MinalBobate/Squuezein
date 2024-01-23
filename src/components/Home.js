@@ -12,10 +12,12 @@ import Deals from './Deals'
 import CustomerSupport from './CustomerSupport'
 import FAQ from './FAQ'
 import Footer from './Footer'
+
 const Home=()=>{
 return(
   <>
   <Box style={{width:'100%'}}>
+    
   <Header />
   
   

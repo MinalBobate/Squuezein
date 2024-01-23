@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 function Deals() {
     return (
-        <div style={{padding:'30px 121px'}}>
+        <WrapperContainer>
             <div>
-                <div style={{ color: 'rgba(37, 61, 78, 1)', fontSize: '30px',fontWeight:600, marginBottom: '30px', fontFamily: 'Quicksand' }}>Great Deals in <span style={{ color: 'rgba(91, 192, 232, 1)' }}>Bothell </span></div>
+            <Heading >Great Deals in<span style={{color:'rgba(37, 61, 78, 1)'}}> Bothell</span></Heading>
+
             </div>
-            <div style={{ display: 'grid',gridGap:'50px', gridTemplateColumns: 'auto auto auto auto', gridTemplateRows: 'auto auto auto' }}>
+            <Wrapper>
                 <Container>
-                    <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal1.png'  /></div>
+                    <ImageContainer><Image loading="lazy" src='deal1.png' /></ImageContainer>
                     <DiscountBanner>UP TO $30 OFF</DiscountBanner>
                     <Specials>Best Eyelash Extensions in San Francisco</Specials>
                     <Location>
@@ -18,7 +19,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal2.png'  /></div>
+                <ImageContainer ><Image loading="lazy" src='deal2.png'  /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Specials!</Specials>
                     <Location>
@@ -27,7 +28,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal3.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal3.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Revitalize your ride without leaving your driveway!</Specials>
                     <Location>
@@ -36,7 +37,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal4.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal4.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>For all your carpentry needs </Specials>
                     <Location>
@@ -45,7 +46,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal4.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal4.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Specials!</Specials>
                     <Location>
@@ -54,7 +55,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal3.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal3.png' /> </ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Specials!</Specials>
                     <Location>
@@ -63,7 +64,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal1.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal1.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Specials!</Specials>
                     <Location>
@@ -72,7 +73,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal2.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal2.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Renew Brighten Skin</Specials>
                     <Location>
@@ -81,7 +82,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal9.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal9.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Specials!</Specials>
                     <Location>
@@ -90,7 +91,7 @@ function Deals() {
                     </Location>
                 </Container>
                 <Container>
-                <div style={{width:'280px',height:'160px'}}><Image loading="lazy" src='deal10.png'  /></div>
+                <ImageContainer><Image loading="lazy" src='deal10.png' /></ImageContainer>
                     <DiscountBanner>UP TO $18 OFF</DiscountBanner>
                     <Specials>Specials!</Specials>
                     <Location>
@@ -101,14 +102,36 @@ function Deals() {
 
 
 
-            </div>
+            </Wrapper>
             <div style={{textAlign:'center'}}>
                 <Button>SEE MORE</Button>
             </div>
 
-        </div>
+        </WrapperContainer>
     )
 }
+
+const ImageContainer=styled.div`
+width:280px;
+height:160px;
+@media (max-width:576px){
+   width:100%; 
+}
+
+`;
+
+const Heading=styled.div`
+color:rgba(91, 192, 232, 1); 
+  font-size:30px;
+  margin-bottom:30px;
+  font-weight:500;
+  @media (max-width:576px){
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+`;
 
 const Button = styled.button`
 background: rgb(91, 192, 232);
@@ -117,16 +140,38 @@ background: rgb(91, 192, 232);
   padding: 16px 0;
   width: 175px;
   margin: 30px auto;
+  cursor:pointer;
   color: white;
   font-size: 18px;
   font-Weight:600;
 
 `;
 
+const WrapperContainer=styled.div`
+padding:30px 121px 30px 121px;
+@media (max-width:576px){
+  padding:30px 16px;
+}
+`;
+const Wrapper=styled.div`
+display: grid;
+grid-gap:50px ;
+grid-template-columns: auto auto auto auto;
+ grid-template-rows: auto auto auto;
+
+@media (max-width:576px){
+    display: block;
+}
+`;
+
 const Container = styled.div`
   display: flex;
-  max-width: 280px;
+  width: 280px;
   flex-direction: column;
+  @media (max-width:576px){
+    width:100%;
+    margin-top:40px;
+}
 `;
 
 const Image = styled.img`
