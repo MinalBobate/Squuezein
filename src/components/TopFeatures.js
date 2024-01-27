@@ -17,7 +17,7 @@ function TopFeatures(props) {
       <ImageContainer>
         <LazyImage
           loading="lazy"
-          src="oneClickReach.png"
+          src="pana.png"
         />
       </ImageContainer>
       <DescriptionContainer>
@@ -33,7 +33,7 @@ function TopFeatures(props) {
       <ImageContainer>
         <LazyImage
           loading="lazy"
-          src="2.png"
+          src="2.svg"
         />
       </ImageContainer>
       <DescriptionContainer>
@@ -61,7 +61,7 @@ function TopFeatures(props) {
       <ImageContainer>
         <LazyImage
           loading="lazy"
-          src="4.png"
+          src="new4.png"
         />
       </ImageContainer>
       <DescriptionContainer>
@@ -75,7 +75,7 @@ function TopFeatures(props) {
       <ImageContainer>
         <LazyImage
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ff7ae67657f1b1dc75ac32b1c152bdc37a9dbe0081cf49963e723b65721da6e?apiKey=252fdac3ac61463cb0d2a2667f2e3068&"
+          src='5.png'
         />
       </ImageContainer>
       <DescriptionContainer>
@@ -88,7 +88,7 @@ function TopFeatures(props) {
     <Container>
       <ImageContainer>
         <LazyImage
-          loading="lazy" src="6.png"
+          loading="lazy" src="6.svg"
         />
       </ImageContainer>
       <DescriptionContainer>
@@ -113,7 +113,7 @@ function TopFeatures(props) {
 
 const BtnContainer=styled.div`
 text-align: center;
-padding-top: 60px;
+padding-top: 3.75rem;
 @media (max-width:576px){
   padding-top: 0;
 }
@@ -123,20 +123,20 @@ padding-top: 60px;
 
 
 const WrapperContainer=styled.div`
-padding:30px 121px 30px 121px;
+padding:1.875rem 7.56rem;
 @media (max-width:576px){
-  padding:30px 16px;
+  padding:1.875rem 1rem;
 }
 `;
 
 const Heading=styled.div`
 color:rgba(91, 192, 232, 1); 
-  font-size:30px;
-  margin-bottom:30px;
+  font-size:1.875rem;
+  margin-bottom:1.875rem;
   font-weight:500;
   @media (max-width:576px){
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
     text-align: center;
   }
 
@@ -145,7 +145,7 @@ color:rgba(91, 192, 232, 1);
 
 const Wrapper=styled.div`
 background:rgba(91, 192, 232, 0.03);
-padding: 40px 90px;
+padding: 2.5rem 5.625rem;
 @media (max-width:576px){
   padding:0;
 }
@@ -155,7 +155,7 @@ const MainContainer=styled.div`
 display:grid;
 grid-template-rows:auto auto;
 grid-template-columns:auto auto auto;
-grid-gap: 40px;
+grid-gap: 2.5rem;
 @media (max-width:576px){
  display:block;
 }
@@ -163,42 +163,42 @@ grid-gap: 40px;
 const Button=styled.button`
 background: rgb(91, 192, 232);
   border: rgb(91, 192, 232) solid 1px;
-  border-radius: 50px;
-  padding: 16px 0;
+  border-radius: 3.125rem;
+  padding: 1rem 0;
   cursor:pointer;
-  width: 247px;
-  margin: 30px auto;
+  width: 15.438rem;
+  margin: 1.875rem auto;
   color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
 
 `;
 
 const Container = styled.div`
   display: flex;
-  max-width: 378px;
+  width: 20.625rem;
   flex-direction: column;
   align-items: center;
   text-align: center;
   @media (max-width:576px){
-padding:20px 10px 10px 10px;
+padding:1.25rem 0.625rem 0.625rem 0.625rem;
 
-max-width: 100%;
+width: 100%;
   }
 `;
 
 const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
-  border-radius: 200px;
+  border-radius: 12.5rem;
   box-shadow: 0px 4px 4px 0px rgba(37, 61, 78, 0.15);
   backdrop-filter: blur(0px);
   overflow-x: auto;
   background-color: rgba(255, 255, 255, 0.3);
   display: flex;
-  width: 172px;
+  width: 10.75rem;
   flex-direction: column;
-  height: 172px;
-  padding: 0 8px;
+  height: 10.75rem;
+  padding: 0 0.5rem;
 `;
 
 const LazyImage = styled.img`
@@ -210,20 +210,20 @@ const LazyImage = styled.img`
 `;
 
 const DescriptionContainer = styled.div`
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: rgba(91, 192, 232, 0.08);
   align-self: stretch;
   display: flex;
-  margin-top: 10px;
-  width: 350px;
-  height: 200px;
+  margin-top: 0.625rem;
+  // width: 33.125rem;
+  height: 12.5rem;
   flex-direction: column;
   justify-content: center;
-  padding: 28px 1px;
+  padding: 1.75rem 1px;
   box-shadow: 0 3px rgba(150, 162, 166, 0.19);
   @media (max-width:576px){
     width: 100%;
-    padding:20px 1px;
+    padding:1.25rem 1px;
     height:auto;
   }
 `;
@@ -231,16 +231,16 @@ const DescriptionContainer = styled.div`
 const Title = styled.div`
   color: #253d4e;
   white-space: nowrap;
-  font: 500 22px/127% Quicksand, sans-serif;
+  font: 500 1.375rem/127% Quicksand, sans-serif;
 `;
 
 const Description = styled.div`
   color: #6c798d;
   text-align: center;
   align-self: stretch;
-  margin-top: 10px;
-  font: 500 17px/24px Quicksand, sans-serif;
-  padding:0 15px;
+  margin-top: 0.625rem;
+  font: 500 1.063rem/1.5rem Quicksand, sans-serif;
+  padding:0 0.938rem;
 `;
 
 export default TopFeatures;

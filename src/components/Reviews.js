@@ -47,10 +47,10 @@ function Reviews(props) {
     <>
 
     <WrapperContainer >
-    <Heading>Our Customers <span style={{color:'rgba(91, 192, 232, 1)'}}>Say </span></Heading>
+    <Heading>Our Customers <span style={{color:'rgba(37, 61, 78, 1)'}}>Say </span></Heading>
 
 
-    <Swiper {...swiperParams} style={{display:'flex', direction:'row', justifyContent:'center',overflow:'visible'}}>
+    <Swiper {...swiperParams} style={{display:'flex', direction:'row', justifyContent:'center',}}>
       <SwiperSlide>
       <CardContainer className="customClass">
       <ProfileWrapper>
@@ -192,27 +192,25 @@ const Button=styled.button`
 background: rgb(91, 192, 232);
   border: rgb(91, 192, 232) solid 1px;
   border-radius: 50px;
-  padding: 16px 0;
-  width: 247px;
-  margin: 30px auto;
+  padding: 1rem;
   cursor:pointer;
   color: white;
   font-size: 18px;
 @media (max-width:576px){
-  margin-top:60px;
+ 
 }
 `;
 
 const CardContainer = styled.div`
   display: flex;
   width: 490px;
-  height:514px;
+  
   padding: 40px 0;
   margin: 0 auto;
   flex-direction: column;
   @media (max-width: 576px) {
     width: 100%;
-  height:455px;
+  
   }
  
 `;

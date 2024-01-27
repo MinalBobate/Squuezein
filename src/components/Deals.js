@@ -112,8 +112,8 @@ function Deals() {
 }
 
 const ImageContainer=styled.div`
-width:280px;
-height:160px;
+width:17.5rem;
+height:10rem;
 @media (max-width:576px){
    width:100%; 
 }
@@ -122,12 +122,12 @@ height:160px;
 
 const Heading=styled.div`
 color:rgba(91, 192, 232, 1); 
-  font-size:30px;
-  margin-bottom:30px;
+  font-size:1.875rem;
+  margin-bottom:1.875rem;
   font-weight:500;
   @media (max-width:576px){
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
     text-align: center;
   }
 
@@ -136,26 +136,26 @@ color:rgba(91, 192, 232, 1);
 const Button = styled.button`
 background: rgb(91, 192, 232);
   border: rgb(91, 192, 232) solid 1px;
-  border-radius: 50px;
-  padding: 16px 0;
-  width: 175px;
-  margin: 30px auto;
+  border-radius: 3.125rem;
+  padding: 1rem 0;
+  width: 11rem;
+  margin: 1.875rem auto;
   cursor:pointer;
   color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-Weight:600;
 
 `;
 
 const WrapperContainer=styled.div`
-padding:30px 121px 30px 121px;
+padding:1.875rem 7.56rem 1.875rem 7.56rem;
 @media (max-width:576px){
-  padding:30px 16px;
+  padding:1.875rem 1rem;
 }
 `;
 const Wrapper=styled.div`
 display: grid;
-grid-gap:50px ;
+grid-gap:3.125rem ;
 grid-template-columns: auto auto auto auto;
  grid-template-rows: auto auto auto;
 
@@ -166,17 +166,17 @@ grid-template-columns: auto auto auto auto;
 
 const Container = styled.div`
   display: flex;
-  width: 280px;
+  width: 17.5rem;
   flex-direction: column;
   @media (max-width:576px){
     width:100%;
-    margin-top:40px;
+    margin-top:2.5rem;
 }
 `;
 
 const Image = styled.img`
 border: 1px solid #D3D3D3;
- border-radius:15px;
+ border-radius:0.938rem;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -185,46 +185,46 @@ border: 1px solid #D3D3D3;
 
 const DiscountBanner = styled.span`
 position: relative;
-bottom: 37px;
+bottom: 2.313rem;
 margin-left: auto;
   color: var(--white, #fff);
   white-space: nowrap;
   justify-content: center;
-  border-radius: 5px 0px;
+  border-radius: 0.313rem 0;
   background-color: #253d4e;
  
-  padding: 8px 10px;
-  font: 600 16px/125% Quicksand, sans-serif;
+  padding: 0.5rem 0.625rem;
+  font: 600 1rem/125% Quicksand, sans-serif;
 `;
 
 const Specials = styled.div`
   color: var(--Main_clr, #253d4e);
-  margin-top: -30px;
+  margin-top: -1.875rem;
   width: 100%;
-  height: 45px;
-  font: 600 18px/22px Quicksand, sans-serif;
+  height: 2.813rem;
+  font: 600 1.125rem/1.375rem Quicksand, sans-serif;
 `;
 
 const Location = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   width: 100%;
   justify-content: space-between;
-  gap: 20px;
+  gap: 1.25rem;
  
 `;
 
 const LocationName = styled.div`
   color: var(--Main_clr, #253d4e);
   letter-spacing: 1px;
-  font: 500 17px/118% Quicksand, sans-serif;
+  font: 500 1.063rem/118% Quicksand, sans-serif;
 `;
 
 const Distance = styled.div`
   color: var(--Main_clr, #253d4e);
   text-align: right;
   letter-spacing: 0.2px;
-  font: 500 13px/154% Quicksand, sans-serif;
+  font: 500 0.813rem/154% Quicksand, sans-serif;
 `;
 
 export default Deals

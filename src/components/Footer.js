@@ -53,7 +53,7 @@ function Footer() {
 
                 <Wrapper>
                   <SocialWrapper>
-                    <Title style={{width:'200px'}}>Social links</Title>
+                    <Title style={{width:'12.5rem'}}>Social links</Title>
                     <LinksWrapper>
                         <IconDiv><Image loading="lazy" src="twitter.svg" style={{alignSelf:'center'}}/></IconDiv>
                         <IconDiv><Image loading="lazy" src="facebook.svg" style={{alignSelf:'center'}}/></IconDiv>
@@ -81,11 +81,11 @@ function Footer() {
 const Heading=styled.div`
 color: var(--Main_clr, #253D4E);
 font-family: Redressed;
-font-size: 40px;
+font-size: 2.5rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-margin-bottom:30px;
+margin-bottom:1.875rem;
 @media (max-width:576px){
   
 }
@@ -95,6 +95,7 @@ margin-bottom:30px;
 const SocialWrapper=styled.div`
 display:flex;
 flex-direction:column;
+flex-gap:0.62rem;
 @media (max-width:576px){
   flex-direction:row; 
   align-items:center;
@@ -102,9 +103,9 @@ flex-direction:column;
 
 const WrapperContainer=styled.div`
 background: rgba(207, 241, 255, 0.8);
- padding: 30px 30px 30px 80px;
+ padding: 3rem 2.63rem 2.19rem 5.25rem;
 @media (max-width:576px){
-  padding:10px 16px 30px 16px;
+  padding:0.69rem 1rem 1.59rem 1rem;
 }
 `;
 
@@ -112,17 +113,17 @@ background: rgba(207, 241, 255, 0.8);
 const GridandSocialFlex = styled.div`
 display:flex;
 direction:row;
-gap:200px;
-margin-bottom: 50px;
+gap:11rem;
+margin-bottom: 3.125rem;
 @media (max-width:576px){
   flex-direction:column;
-  gap:40px;
+  gap:2.5rem;
 }
 `;
 
 const Divider = styled.div`
 width: 100%;
-height: 2px;
+height: 0.125rem;
 flex-shrink: 0;
 background:  #253D4E;
 `;
@@ -130,31 +131,34 @@ background:  #253D4E;
 const Footer1 = styled.div`
 color:  #253D4E;
 font-family: Quicksand;
-font-size: 14px;
+font-size: 0.875;
 font-style: normal;
 font-weight: 400;
-line-height: 16px; /* 114.286% */
-padding-top:30px;
+line-height: 1rem; /* 114.286% */
+padding-top:1.875rem;
 `;
 
 const Title = styled.div`
 color: var(--Main_clr, #253D4E);
 font-family: Quicksand;
-font-size: 18px;
+font-size: 1.125rem;
 font-style: normal;
 font-weight: 500;
-line-height: 28px;
+line-height: 1.75rem;
 `;
 
 
 
 const IconDiv=styled.div`
-border:1px solid rgba(91, 192, 232, 1);
+border:0.063rem solid rgba(91, 192, 232, 1);
 border-radius:50%;
 background:white;
 cursor:pointer;
-padding: 6px 6px;
+padding:0.375rem;
 display:flex;
+@media (max-width: 576px) {
+  padding:0.2rem;
+ }
 `;
 
 
@@ -165,7 +169,7 @@ const Wrapper = styled.span`
   display: flex;
  
   flex-direction: column;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   @media (max-width: 576px) {
    padding:0;
   }
@@ -174,16 +178,16 @@ const Wrapper = styled.span`
 const Title1 = styled.div`
   color: var(--Main_clr, #253d4e);
   width: 100%;
-  font: 500 20px/140% Quicksand, sans-serif;
+  font: 500 1.25rem/140% Quicksand, sans-serif;
 `;
 
 const LinksWrapper = styled.div`
   display: flex;
-  margin-top: 21px;
+  margin-top: 1.313rem;
   width: 100%;
-  padding-right: 75px;
+  padding-right: 4.688rem;
   justify-content: space-between;
-  gap: 8px;
+  gap: 0.5rem;
 
   @media (max-width:576px){
     margin-top:0;
@@ -217,10 +221,10 @@ const FourthImage = styled.img`
 
 const OtherLinksWrapper = styled.div`
   display: flex;
-  margin-top: 16px;
+  margin-top: 1rem;
   width: 100%;
   justify-content: space-between;
-  gap: 11px;
+  gap: 0.688rem;
 `;
 
 const FifthImage = styled.img`
@@ -247,9 +251,9 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
-  gap: 200px;
+  gap: 11rem;
   @media (max-width: 576px) {
-    gap: 50px;
+    gap: 1.5rem;
     grid-template-columns: auto auto;
   }
 `;
@@ -257,22 +261,22 @@ const StyledGrid = styled.div`
 const Column = styled.span`
   display: flex;
   flex-direction: column;
-  
+  flex-gap:0.62rem;
   @media (max-width:576px){
-width:194px;
+    flex-gap:1.5rem;
   }
   
 `;
 
 const Title2 = styled.div`
   color: var(--Main_clr, #253d4e);
-  font: 500 20px/140% Quicksand, sans-serif;
+  font: 500 1.25rem/140% Quicksand, sans-serif;
 `;
 
 const Item = styled.div`
   color: var(--Main_clr, #253d4e);
-  margin-top: 10px;
-  font: 500 14px Quicksand, sans-serif;
+  margin-top: 0.625rem;
+  font: 500 0.875rem Quicksand, sans-serif;
   font-weight:500;
 `;
 

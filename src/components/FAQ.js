@@ -22,7 +22,7 @@ function FAQ() {
     return (
         <WrapperContainer>
             <div >
-            <div>
+                <div>
                     {isLargeScreen ? (
                         <Heading>Frequently asked questions(FAQs)</Heading>
                     ) : (
@@ -103,22 +103,23 @@ function FAQ() {
 
 const Divider=styled.div`
 border: 2px solid rgba(211, 211, 211, 0.2);
-  width: 1000px;
+  width: 80%;
   margin: 0 auto;
   @media (max-width:576px){
     width:95%;
-    margin-left:10px;
+    margin-left:0.625rem;
   }
   
 `;
 const WrapperContainer=styled.div`
-padding:30px 121px 30px 121px;
+padding:3.75rem 7.56rem 3.75rem 5.56rem;
 @media (max-width:576px){
-  padding:30px 16px;
-  border-radius: 8px;
-border: 1px solid #D3D3D3;
+  padding:1.25rem;
+  border-radius: 1rem;
+border: 0.125rem solid #D3D3D3;
 
 background: #FFF;
+margin-bottom:2.5rem;
 }
 `;
 
@@ -128,41 +129,45 @@ background: #FFF;
 const Button = styled.button`
 background: rgb(91, 192, 232);
 border: rgb(91, 192, 232) solid 1px;
-border-radius: 50px;
-padding: 16px 0;
-width: 175px;
-margin: 30px auto;
+border-radius: 3.125rem;
+padding: 1rem 1.5rem;
+margin: 1.875rem auto;
 cursor:pointer;
 color: white;
-font-size: 18px;
+font-size: 1.125rem;
 font-weight:600;
 
 `;
 const Heading = styled.div`
+text-shadow: 0px 2px 7px rgba(91, 192, 232, 0.5);
 color: #5BC0E8;
 font-family: Quicksand;
-font-size: 40px;
+font-size: 2.5rem;
 font-style: normal;
 font-weight: 600;
-line-height: 50px;
+line-height: 3.125rem;
 @media(max-width:576px){
   text-align:center;
+  text-shadow:0 0;
 }
 `;
 
 const QueAns = styled.div`
 display: flex;
-
-padding: 40px;
+padding:2.5rem;
+margin-top:3.28rem;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-gap: 30px;
-border-radius: 24px;
+gap: 1.875rem;
+border-radius: 1.5rem;
 background: #FFF;
-
+box-shadow: 1px 5px 10px  rgba(86, 153, 196, 0.15),-1px 0px 5px 0px rgba(86, 153, 196, 0.15);
+clip-path: inset(0px -10px -10px -10px);
 @media (max-width:576px){
- padding:10px;
+ padding:1.25rem 0.62rem;
+ margin:3.125rem 0;
+ box-shadow:0px 0px 0px;
 }
 `;
 
@@ -175,14 +180,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
- margin-borrom:30px;
+ margin-borrom:1.875rem;
 `;
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   
 
   @media (max-width: 576px) {
@@ -193,11 +198,11 @@ const Header = styled.header`
 
 const PlusIcon = styled.div`
   color: var(--Main_clr, #253d4e);
-  letter-spacing: 0.2px;
+  
   text-transform: capitalize;
   white-space: nowrap;
   margin: auto 0;
-  font: 500 20px/110% Quicksand, sans-serif;
+  font: 500 1.25rem/110% Quicksand, sans-serif;
 
   @media (max-width: 576px) {
    
@@ -208,26 +213,26 @@ const Title = styled.div`
   color: var(--Main_clr, #253d4e);
   
   flex-grow: 1;
-  font: 500 20px Quicksand, sans-serif;
+  font: 500 1.25rem Quicksand, sans-serif;
 
   @media (max-width: 576px) {
     width: 100%;
-    font-size:14px;
-    line-height:20px;
+    font-size:0.875rem;
+    line-height:1.25rem;
   }
 `;
 
 const Description = styled.div`
   color: var(--subtext_clr, #6c798d);
-  margin-top: 20px;
+  margin-top: 1.25rem;
   width: 100%;
-  font: 500 18px Quicksand, sans-serif;
+  font: 500 1.125rem Quicksand, sans-serif;
 
   @media (max-width: 576px) {
     
-    font-size:14px;
-    line-height:20px;
-    padding-left:10px;
+    font-size:0.875rem;
+    line-height:1.25rem;
+    padding-left:0.625;
   }
 `;
 

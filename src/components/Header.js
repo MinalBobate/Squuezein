@@ -1,12 +1,16 @@
-import React ,{ useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {PersonOutline,SearchOutlined,LocationOnOutlined,InsertInvitationOutlined,AccessTimeOutlined,KeyboardArrowDown} from '@mui/icons-material';
-import { InputBase, } from '@mui/material';
+import { PersonOutline, SearchOutlined, LocationOnOutlined, InsertInvitationOutlined, AccessTimeOutlined, KeyboardArrowDown } from '@mui/icons-material';
 import Banner from "./Banner";
+
+
+
 
 function Nav() {
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 567);
+
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,6 +19,7 @@ function Nav() {
 
     window.addEventListener('resize', handleResize);
 
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -22,141 +27,159 @@ function Nav() {
 
   return (
     <>
-    <Wrapper>
-    <HeaderContainer style={{ width: '100%' }}>
-                <LogoContainer>
-                    <Logo1
-                        loading="lazy"
-                        src="/logo.png"
-                    />
-                    <Logo2
-                        loading="lazy"
-                        src="/logo2.png"
-                    />
-                </LogoContainer>
+      <Wrapper>
+        <HeaderContainer style={{ width: '100%' }}>
+          <LogoContainer>
+            <Logo1
+              loading="lazy"
+              src="/logo.png"
+            />
+            <Logo2
+              loading="lazy"
+              src="/logo2.png"
+            />
+          </LogoContainer>
 
-                <div>
-                    {isLargeScreen ? (
-                        <UserInfo>
-                            <HelpText>Help &nbsp;</HelpText>
-                            <Separator />
-                            <HelpText> <p> &nbsp; List your service on SqueezeIn.Me &nbsp;</p> </HelpText>
-                            <Separator />
-                            <SignInText style={{display:'flex'}}> <p>&nbsp; Log in / Sign up </p>< KeyboardArrowDown /></SignInText>
+          <div>
+            {isLargeScreen ? (
+              <UserInfo>
+                <HelpText>Help &nbsp;</HelpText>
+                <Separator />
+                <HelpText> <p> &nbsp; List your service on SqueezeIn.Me &nbsp;</p> </HelpText>
+                <Separator />
+                <SignInText style={{ display: 'flex' }}> <p>&nbsp; Log in / Sign up </p>< KeyboardArrowDown /></SignInText>
 
-                        </UserInfo>
-                    ) : (
-                        <UserWrapper><PersonOutline /></UserWrapper>
-                    )}
-                </div>
+              </UserInfo>
+            ) : (
+              <UserWrapper><PersonOutline /></UserWrapper>
+            )}
+          </div>
 
 
 
-            </HeaderContainer>
- 
-    <StyledDiv>
-      Your Time, Your Schedule: Effortless Booking with a Click for 
-      <span style={{ color: "rgba(252,175,23,1)" }}> <Banner/></span>
-      
-    </StyledDiv>
-    <BannerSearchWrapper>
-    <Form>
-      <Container>
-      <Section>
-        
-        <Label >
-      <SearchOutlined />
-        <InputBase placeholder='Search for services' />
-        </Label>
-      </Section>
-      
-      <Divider />
-      <Section>
-        
-        <Label >
-          <LocationOnOutlined />
-          <InputBase placeholder='City or Zipcode'  />
-        </Label>
-      </Section>
-      <Divider />
-      <Section>
-        
-        <Label>
-          <InsertInvitationOutlined />
-          <InputBase placeholder='City or Zipcode'  />
-        </Label>
-      </Section>
-      <Divider />
-      <Section>
-        
-        <Label>
-          <AccessTimeOutlined />
-          <InputBase placeholder='Time'  />
-        </Label>
-      </Section>
-      
-      <Button>GET STARTED</Button>
-      </Container>
-    </Form>
-    <Div>
-      <Text>
-    Experience the convenience of connecting with local experts — no calls, no hassle. Just simple scheduling for all your needs.
-    </Text>
-    </Div>
-    </BannerSearchWrapper>
-    </Wrapper>
+        </HeaderContainer>
+
+        <StyledDiv>
+          Your Time, Your Schedule: Effortless Booking with a Click for
+          <span style={{ color: "rgba(252,175,23,1)", }}> <Banner /></span>
+
+        </StyledDiv>
+        <BannerSearchWrapper>
+          <Form>
+            <Container>
+              <Section>
+
+                <Label >
+                  <SearchOutlined color="#253D4E" />
+                  <InputBase placeholder="Search for technicians, painters, etc."
+                 />
+                </Label>
+              </Section>
+
+              <Divider />
+              <Section>
+
+                <Label >
+                  <LocationOnOutlined color="#253D4E"/>
+                  <InputBase placeholder='City or Zipcode'
+                   />
+                </Label>
+              </Section>
+              <Divider />
+              <Section>
+
+                <Label>
+                  <InsertInvitationOutlined color="#253D4E"/>
+                  <InputBase 
+                 placeholder='Date'
+                  />
+                </Label>
+              </Section>
+              <Divider />
+              <Section>
+
+                <Label>
+                  <AccessTimeOutlined color="#253D4E"/>
+                  <InputBase 
+                   placeholder='Time'
+                  />
+                </Label>
+              </Section>
+
+              <Button>GET STARTED</Button>
+            </Container>
+          </Form>
+          <BannerContainer>
+          <Div>
+            <Text>
+            Experience the convenience of connecting with local experts effortlessly — no calls, no hassle. Just simple, streamlined scheduling for all your needs.
+            </Text>
+          </Div>
+          </BannerContainer>
+        </BannerSearchWrapper>
+      </Wrapper>
     </>
-    
+
   );
 }
 
-
-const Wrapper=styled.div`
-text-align:center;
-background: linear-gradient(to bottom right,rgba(91, 192, 232, 0.20),rgba(252, 175, 23, 0.15));
-padding:80px 121px;
-@media (max-width: 576px) {
-padding:40px 16px;
-}
+const InputBase = styled.input`
+ 
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  &::placeholder {
+   color: black;
+   
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
-const BannerSearchWrapper =styled.div`
+
+
+
+const Wrapper = styled.div`
+text-align:center;
+background: linear-gradient(to bottom right,rgba(91, 192, 232, 0.20),rgba(252, 175, 23, 0.15));
+
+@media (max-width: 576px) {
+
+}
+`;
+const BannerContainer=styled.div`
+@media (max-width: 576px) {
+   padding:0 1.63rem;
+}
+
+`;
+
+const BannerSearchWrapper = styled.div`
 display:flex;
 flex-direction:column;
 @media (max-width: 576px) {
   flex-direction:column-reverse;
   }
 `;
-const Text =styled.p`
-margin:0 auto;
-margin-top:20px;
-  width: 632px;
-  color: #FFF;
- 
-  font-family:Roboto;
-  font-size: 32px;
-  font-style: normal;
-
-  text-align: center;
-  
-  font-weight: 500;
-  line-height: 40px;
-
+const Text = styled.p`
+color: #FFF;
+text-align: center;
+font-family: Roboto;
+font-size: 1.7rem;
+font-style: normal;
+font-weight: 500;
+line-height: 2.5rem; /* 125% */
+width: 49%;
   @media (max-width: 576px){
-  margin:0;
-    width: 263px;
-    
-    text-align: center;
-   
-    font-size: 14px;
-    
-    font-weight: 500;
-    line-height: 15px; /* 125% */
+    width: 78%;
+    font-size: 0.9rem;
+    line-height: 1rem; /* 125% */
   }
 
 `;
 
-const UserWrapper=styled.div`
+const UserWrapper = styled.div`
 border: 2.6px solid #253D4E;
   border-radius: 50%;
   display: flex;
@@ -167,9 +190,10 @@ border: 2.6px solid #253D4E;
   cursor:pointer;
 `;
 
-const Div=styled.div`
-background: url("./Frame153(1).png");
-margin-top: 40px;
+const Div = styled.div`
+background: url("./Banner3.png");
+width:100%;
+height:20rem;
 
   background-repeat: no-repeat;
   background-size: contain;
@@ -177,21 +201,16 @@ margin-top: 40px;
   background-position: center;
   
   color:black;
- 
+  justify-content:center;
   
   display: flex;
-  width: 1274.72px;
-  height: 339.753px;
-  padding: 94.815px 98.72px;
+  
   flex-direction: column;
-  justify-content: center;
+ 
   align-items: center;
   @media (max-width: 576px){
-    margin: 0 auto;
-    margin-top: 0;
-    width: 100%;
-    height: 146px;
-    padding:20px 0;
+    height:10rem;
+   
   }
 `;
 
@@ -199,9 +218,11 @@ const HeaderContainer = styled.div`
 display: flex;
 align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  
+  padding: 5.62rem 7.5rem;
   @media (max-width: 576px) {
-  padding:0 24px;
+    padding:1.5rem 1.7rem;
+   
   }
 `;
 
@@ -262,7 +283,7 @@ const UserInfo = styled.div`
 `;
 
 const HelpText = styled.div`
-  color: var(--Main_clr, #253d4e);
+  color: var(--Main_clr, #253D4E);
   align-self: stretch;
   white-space: nowrap;
   font: 500 20px/120% Quicksand, sans-serif;
@@ -272,7 +293,7 @@ const HelpText = styled.div`
 `;
 
 const Separator = styled.div`
-  background-color: var(--Main_clr, #253d4e);
+  background-color: var(--Main_clr, #253D4E);
   align-self: stretch;
   display: flex;
   width: 1px;
@@ -283,7 +304,7 @@ const Separator = styled.div`
 
 
 const SignInText = styled.div`
-  color: var(--Main_clr, #253d4e);
+  color: var(--Main_clr, #253D4E);
   font: 500 20px/120% Quicksand, sans-serif;
 `;
 
@@ -319,32 +340,32 @@ const EndSpacing = styled.div`
 const StyledDiv = styled.div`
   
 text-align: center;
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 65px 0;
-  color: #253D4E;
-  letter-spacing: 0.7px;
-  font-size: 48px;
-  font-family: Roboto;
-  font-weight: 600;
-  line-height: 63px;
+width: 55rem;
+color: #253D4E;
+margin: 0 auto;
+text-align: center;
+font-family: Roboto;
+font-size: 3.3rem;
+font-weight: 500;
+line-height: 4.375rem; /* 116.667% */
+letter-spacing: 0.0375rem;
 
 
   @media (max-width: 576px) {
-    width: 100%;
-    padding-bottom:0;
-
+    margin-top:1.88rem;
+padding: 0 1.5rem;
+width: 100%;
 font-family: Roboto;
-font-size: 26px;
+font-size: 1.6rem;
 font-style: normal;
 font-weight: 500;
-line-height: 40px; /* 142.857% */
+line-height: 2rem; /* 142.857% */
    
   }
 `;
 
 
-  
+
 
 const Form = styled.form`
   border-radius: 100px;
@@ -353,8 +374,8 @@ const Form = styled.form`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
-  padding: 13px 15px 13px 48px;
+  // gap: 20px;
+  margin: 3rem 7.56rem;
   
   @media (max-width: 576px) {
     border-radius: 0px;
@@ -362,17 +383,22 @@ const Form = styled.form`
     background-color: transparent;
     justify-content: center;
     padding:0;
+    width:100%;
+    margin:0;
   }
 `;
 
 const Container = styled.div`
   align-items: center;
   align-self: center;
+  padding: 0.5rem ;
   display: flex;
   gap: 16px;
   margin: auto 0;
   @media (max-width: 576px) {
     flex-direction:column;
+    padding:1.5rem;
+    width:100%;
   }
 `;
 
@@ -404,6 +430,9 @@ const Section = styled.div`
   display: flex;
   gap: 20px;
   margin: auto 0;
+  @media (max-width: 576px) {
+    width:100%;
+  }
 `;
 
 const Divider = styled.div`
@@ -431,8 +460,9 @@ const Label = styled.label`
     border-radius: 24px;
   border: 2px solid #5BC0E8;
   background: #FFF;
-  width: 375px;
+  // width:100%;
   height: 50px;
+  padding: 0 1rem;
   }
 `;
 

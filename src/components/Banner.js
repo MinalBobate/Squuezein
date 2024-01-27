@@ -7,6 +7,7 @@ export default function App() {
     return (
       <>
         <Swiper
+      //  direction={'vertical'}
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
